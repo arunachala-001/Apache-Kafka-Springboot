@@ -1,0 +1,23 @@
+server:
+  port: 8082
+
+spring:
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: instance-group-3
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring:
+          json:
+            trusted:
+              packages: "*"
+#            value:
+#              default:
+#                type: com.arun.apache_kafka_consumer.model.Robot
+#            use-type-info-headers: false
+
+logging:
+  level:
+    org.springframework.web: DEBUG
